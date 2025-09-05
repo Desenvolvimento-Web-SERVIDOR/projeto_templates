@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <h2>Dados da última atualização:</h2>
+    <!-- 
+        O Flask-Moment formata a data automaticamente.
+        .format('LLL') -> Formato longo (ex: September 4, 2025 9:30 PM)
+        .fromNow()    -> Formato relativo (ex: a few seconds ago)
+    -->
+    <p>The local date and time is {{ moment(data_atual).format('LLL') }}.</p>
+    <p>That was {{ moment(data_atual).fromNow() }}.</p>
+{% endblock %}
+
