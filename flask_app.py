@@ -1,10 +1,10 @@
-# 1. Importamos as ferramentas e as novas extensões
+# 1. Importando as ferramentas e as novas extensões
 from flask import Flask, request, render_template
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from datetime import datetime
 
-# 2. Criamos e configuramos a aplicação
+# 2. Criando e configurando a aplicação
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
@@ -14,7 +14,6 @@ moment = Moment(app)
 # Rota 1: Página Principal (Home)
 @app.route('/')
 def index():
-    # Passamos o objeto datetime diretamente. O Flask-Moment irá formatá-lo no template.
     return render_template('index.html', data_atual=datetime.now())
 
 # Rota 2: Página de Identificação
@@ -40,4 +39,5 @@ def page_not_found(e):
 # Rota para Erro 500 (Erro Interno do Servidor)
 @app.errorhandler(500)
 def internal_server_error(e):
+
     return render_template('500.html'), 500
