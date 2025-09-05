@@ -1,10 +1,9 @@
-<!-- 1. Herdamos a estrutura básica do Flask-Bootstrap -->
 {% extends "bootstrap/base.html" %}
 
-<!-- 2. Definimos o título da página -->
+<!-- 1. Definindo o título da página -->
 {% block title %}Avaliação Contínua{% endblock %}
 
-<!-- 3. Definimos a barra de navegação (navbar) -->
+<!-- 2. Definindo a barra de navegação -->
 {% block navbar %}
 <div class="navbar navbar-inverse" role="navigation">
     <div class="container">
@@ -19,7 +18,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <!-- 4. Adicionamos os seus links de navegação aqui -->
+                <!-- 3. Adicionando os links de navegação -->
                 <li><a href="/">Home</a></li>
                 <li><a href="/user/Rogerio%20Santos%20Barbosa/PT3032051/IFSP">Identificação</a></li>
                 <li><a href="/contextorequisicao/Rogerio%20Santos%20Barbosa">Contexto da requisição</a></li>
@@ -29,19 +28,16 @@
 </div>
 {% endblock %}
 
-<!-- 5. Definimos o bloco de conteúdo principal -->
+<!-- 4. Definindo o bloco de conteúdo principal -->
 {% block content %}
 <div class="container">
-    <!-- 
-        Este é o bloco que os outros templates (index.html, etc.) irão preencher.
-        É o equivalente ao seu 'page_content' do exemplo do professor.
-    -->
     {% block page_content %}{% endblock %}
 </div>
 {% endblock %}
 
-<!-- 6. Incluímos os scripts do Moment.js para as datas dinâmicas -->
+<!-- 5. Incluímos os scripts do Moment.js para as datas dinâmicas -->
 {% block scripts %}
 {{ super() }}
 {{ moment.include_moment() }}
+
 {% endblock %}
